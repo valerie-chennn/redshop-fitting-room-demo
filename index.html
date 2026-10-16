@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171715" />
+    <meta
+      name="description"
+      content="A high-fidelity concept prototype for turning fashion inspiration into personalized try-on and purchase."
+    />
+    <title>REDshop — Make It Mine</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <button id="mobileGuideButton" class="mobile-guide-button" type="button" aria-label="打开作品导航" aria-expanded="false">☰</button>
+    <button id="mobileGuideLabel" class="mobile-guide-label" type="button" aria-label="打开当前页面设计说明" aria-expanded="false">01 · 穿搭浏览</button>
+    <div id="guideOverlay" class="guide-overlay" aria-hidden="true"></div>
+
+    <main class="experience">
+      <aside id="experienceSidebar" class="story-panel" aria-label="作品演示导航">
+        <div class="story-top">
+          <div class="wordmark"><span>RED</span>room</div>
+          <span class="concept-pill">交互演示</span>
+        </div>
+
+        <div class="story-copy">
+          <p class="eyebrow">从穿搭灵感到可购买的个人造型</p>
+          <h1>把喜欢的穿搭<br /><em>变成自己的版本</em></h1>
+          <p class="lede">
+            围绕穿搭浏览、单品试穿、个性化搭配与购买，设计一条从内容灵感到消费决策的完整链路。
+          </p>
+        </div>
+
+        <p class="nav-label">体验路径</p>
+        <ol class="journey" aria-label="作品演示步骤">
+          <li class="is-active" data-step="market">
+            <button type="button" data-case-step="market"><span>01</span><div><b>穿搭浏览</b><small>从趋势与推荐流发现穿搭</small></div></button>
+          </li>
+          <li data-step="feed">
+            <button type="button" data-case-step="feed"><span>02</span><div><b>穿搭详情</b><small>查看造型里的每件商品</small></div></button>
+          </li>
+          <li data-step="product">
+            <button type="button" data-case-step="product"><span>03</span><div><b>商品详情</b><small>确认商品信息并购买</small></div></button>
+          </li>
+          <li data-step="tryon">
+            <button type="button" data-case-step="tryon"><span>04</span><div><b>单品试穿</b><small>在个人 Avatar 上判断版型</small></div></button>
+          </li>
+          <li data-step="look">
+            <button type="button" data-case-step="look"><span>05</span><div><b>完整穿搭</b><small>围绕核心单品生成完整造型</small></div></button>
+          </li>
+          <li data-step="mylooks">
+            <button type="button" data-case-step="mylooks"><span>06</span><div><b>穿搭收藏</b><small>管理保存的个人造型</small></div></button>
+          </li>
+          <li data-step="lookdetail">
+            <button type="button" data-case-step="lookdetail"><span>07</span><div><b>购买清单</b><small>按单品选择并完成购买</small></div></button>
+          </li>
+        </ol>
+      </aside>
+
+      <section class="device-wrap" aria-label="Interactive mobile prototype">
+        <div class="device">
+          <div class="device-status" aria-hidden="true">
+            <span>9:41</span>
+            <div><i></i><i></i><i></i><b></b></div>
+          </div>
+
+          <section class="screen market-screen is-active" data-screen="market" aria-label="Fashion market">
+            <div class="market-content">
+              <header class="market-topbar">
+                <div class="market-brand"><strong>RED</strong><span>shop</span></div>
+                <button class="market-avatar" aria-label="Profile">V</button>
+              </header>
+
+              <button class="market-search" aria-label="Search the market">
+                <span>⌕</span><em>Search pieces, looks, creators</em><b>⌗</b>
+              </button>
+
+              <nav class="market-tabs" aria-label="Market categories">
+                <button>For you</button><button class="is-active">Fashion</button><button>Beauty</button><button>Home</button><button>Vintage</button>
+              </nav>
+
+              <div class="browse-chips" aria-label="Fashion filters">
+                <button class="is-active">Trending</button>
+                <button>Everyday</button>
+                <button>Workwear</button>
+                <button>Vintage</button>
+                <button>Under £150</button>
+              </div>
+
+              <button class="trend-banner" data-open-look="mara" aria-label="Explore the balloon trouser trend">
+                <img src="./assets/feed-look.png" alt="Mara's London outfit with charcoal balloon trousers" />
+                <div class="trend-copy">
+                  <small>AUTUMN TREND</small>
+                  <h2>The new shape</h2>
+                  <p>Balloon trousers · 286 looks</p>
+                </div>
+                <span class="trend-cta">Explore <b>→</b></span>
+              </button>
+
+              <div class="note-feed-heading">
+                <div><strong>Looks for you</strong><span>From creators and people with your taste</span></div>
+                <button>Fresh</button>
+              </div>
+
+              <div class="note-masonry" aria-label="Outfit notes">
+                <button class="note-card is-demo-only" id="marketLookCard" aria-label="Mara's balloon trouser note, preview only" aria-disabled="true" tabindex="-1">
+                  <div class="note-cover note-cover-tall">
+                    <img src="./assets/feed-look.png" alt="Balloon trousers on a rainy London street" />
+                  </div>
+                  <strong>Soft structure for a rainy London day</strong>
+                  <div class="note-author"><i class="note-avatar mara-avatar">M</i><em>@mara.moves</em><b>♡ 8.2k</b></div>
+                </button>
+
+                <button class="note-card is-demo-only" aria-label="One trouser three ways note, preview only" aria-disabled="true" tabindex="-1">
+                  <div class="note-cover note-cover-medium">
+                    <img src="./assets/look-ballet.png" alt="Personal avatar in a polished balloon trouser look" />
+                  </div>
+                  <strong>One trouser, three ways I’d actually wear it</strong>
+                  <div class="note-author"><i class="note-avatar naya-avatar">N</i><em>@naya.styles</em><b>♡ 3.1k</b></div>
+                </button>
+
+                <button class="note-card is-demo-only" id="marketLookTile" aria-label="Polished workday look note, preview only" aria-disabled="true" tabindex="-1">
+                  <div class="note-cover note-cover-short">
+                    <img src="./assets/look-loafer.png" alt="Balloon trouser workday outfit with loafers" />
+                  </div>
+                  <strong>The polished workday version</strong>
+                  <div class="note-author"><i class="note-avatar ana-avatar">A</i><em>@ana.edits</em><b>♡ 1.8k</b></div>
+                </button>
+
+                <button class="note-card is-demo-only" aria-label="Everyday sneaker styling note, preview only" aria-disabled="true" tabindex="-1">
+                  <div class="note-cover note-cover-tall">
+                    <img src="./assets/look-sneaker.png" alt="Everyday balloon trouser outfit with sneakers" />
+                  </div>
+                  <strong>The everyday version, with sneakers</strong>
+                  <div class="note-author"><i class="note-avatar theo-avatar">T</i><em>@theo.wears</em><b>♡ 956</b></div>
+                </button>
+              </div>
+            </div>
+
+            <nav class="bottom-nav" aria-label="Primary navigation">
+              <button><i>⌂</i><span>Home</span></button>
+              <button class="is-active"><i>◇</i><span>Market</span></button>
+              <button class="create-button" aria-label="Create">＋</button>
+              <button><i>◌</i><span>Inbox</span></button>
+              <button><i>♙</i><span>Me</span></button>
+            </nav>
+          </section>
+
+          <section class="screen feed-screen" data-screen="feed" aria-label="Outfit post details">
+            <header class="app-header overlay-header">
+              <button class="icon-button back-market" aria-label="Back to market">‹</button>
+              <div class="app-logo"><strong>Outfit</strong><span> details</span></div>
+              <button class="icon-button dots" aria-label="More">•••</button>
+            </header>
+
+            <div class="feed-visual" id="feedVisual" data-note="mara">
+              <img id="feedHeroImage" src="./assets/feed-look.png" alt="Creator wearing charcoal balloon trousers on a London street" />
+              <div class="feed-gradient"></div>
+              <button class="shop-look" id="shopLookBtn">
+                <span class="bag-icon">▢</span>
+                <span id="shopLookLabel">Shop the look</span> <b>· 4</b>
+              </button>
+
+              <button class="hotspot hotspot-jacket" data-product="jacket" aria-label="Cropped leather jacket, £218"><span></span><em>Leather jacket <b>£218</b></em></button>
+              <button class="hotspot hotspot-bag" data-product="bag" aria-label="Shoulder bag, £110"><span></span><em>Shoulder bag <b>£110</b></em></button>
+              <button class="hotspot hotspot-boots" data-product="boots" aria-label="Ankle boots, £146"><span></span><em>Ankle boots <b>£146</b></em></button>
+              <button class="hotspot hotspot-trousers" id="trouserHotspot" data-product="trousers" aria-label="Balloon trousers, £129">
+                <span></span><em>Balloon trousers <b>£129</b></em>
+              </button>
+
+              <div class="creator-caption">
+                <div class="creator-row">
+                  <div class="avatar" id="noteCreatorAvatar">M</div>
+                  <div><strong id="noteCreator">@mara.moves</strong><span id="noteLocation">London, UK</span></div>
+                  <button>Follow</button>
+                </div>
+                <p id="noteCaption">Soft structure for a rainy London afternoon. The trousers do all the work.</p>
+                <div class="post-meta"><span id="noteLikes">♡ 8.2k</span><span id="noteComments">◯ 246</span><span>↗</span><span class="save">⌑</span></div>
+              </div>
+            </div>
+
+            <div class="sheet-scrim" id="productScrim"></div>
+            <article class="product-sheet" id="productSheet" aria-label="Selected product">
+              <div class="sheet-handle"></div>
+              <div class="product-quick-link">
+                <div class="quick-product-image"><img id="quickProductImage" src="./assets/feed-look.png" alt="Selected item from the creator look" /></div>
+                <div class="product-heading">
+                  <p id="productBrand">ATELIER NORTH</p>
+                  <h2 id="productName">Sculpted wool balloon trousers</h2>
+                  <span>Sold by a verified REDshop seller</span>
+                </div>
+                <strong id="productPrice">£129</strong>
+              </div>
+              <div class="product-specs">
+                <span><i class="swatch-charcoal" id="productSwatch"></i><b id="productColor">Charcoal</b></span>
+                <span id="productMaterial">Wool blend</span>
+                <span id="productSizes">XS–XL</span>
+              </div>
+              <div class="commerce-signals"><span>★ 4.8 · 324 reviews</span><span>Free returns</span><span>Delivery from Fri</span></div>
+              <div class="sheet-actions">
+                <button class="secondary-action product-link-button" id="viewProductBtn">View product <span>›</span></button>
+                <button class="primary-action" id="tryOnBtn">Try on me <span>→</span></button>
+              </div>
+            </article>
+          </section>
+
+          <section class="screen product-screen" data-screen="product" aria-label="Product details">
+            <header class="app-header solid-header">
+              <button class="icon-button back-product" aria-label="Back to outfit">‹</button>
+              <div class="header-title"><strong>Product details</strong><span id="productSource">From @mara.moves’ look</span></div>
+              <button class="icon-button dots" aria-label="More">•••</button>
+            </header>
+
+            <div class="product-page-scroll">
+              <div class="pdp-hero"><img id="pdpImage" src="./assets/feed-look.png" alt="Selected fashion product" /></div>
+              <div class="pdp-copy">
+                <p id="pdpBrand">ATELIER NORTH</p>
+                <h2 id="pdpName">Sculpted wool balloon trousers</h2>
+                <div class="pdp-price-row"><strong id="pdpPrice">£129</strong><span>★ 4.8 <small>(324)</small></span></div>
+                <div class="pdp-benefits"><span>Verified seller</span><span>Free returns</span><span>Ships in 1–2 days</span></div>
+
+                <div class="pdp-option">
+                  <div><b>Colour</b><span id="pdpColor">Charcoal</span></div>
+                  <button><i id="pdpSwatch"></i><span id="pdpColorButton">Charcoal</span><b>✓</b></button>
+                </div>
+                <div class="pdp-option">
+                  <div><b>Size</b><span>Size guide</span></div>
+                  <div class="size-options" id="pdpSizes"><button>XS</button><button class="is-selected">S</button><button>M</button><button>L</button><button>XL</button></div>
+                </div>
+
+                <div class="delivery-card">
+                  <span>▣</span><div><b>Delivery from Friday</b><small>Free over £80 · Duties included</small></div><strong>›</strong>
+                </div>
+                <div class="delivery-card">
+                  <span>↺</span><div><b>Free returns within 30 days</b><small>Return to any supported carrier</small></div><strong>›</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="pdp-actions">
+              <button class="secondary-action" id="pdpBagBtn">＋ Add to bag</button>
+              <button class="primary-action" id="pdpPrimaryBtn">Buy now <span>→</span></button>
+            </div>
+          </section>
+
+          <section class="screen fitting-screen" data-screen="tryon" aria-label="Single item fitting room">
+            <header class="app-header solid-header">
+              <button class="icon-button back-feed" aria-label="Back">‹</button>
+              <div class="header-title"><strong>Fitting room</strong><span id="fittingCount">Your avatar · trousers</span></div>
+              <button class="icon-button edit-fit-header" id="editFitBtn" aria-label="Edit my fit profile">✎</button>
+            </header>
+
+            <div class="tryon-context-bar">
+              <button class="tryon-context" id="tryonContextBtn" data-context-trigger aria-label="Change styling context">
+                <span class="context-weather" aria-hidden="true">☂</span>
+                <span class="tryon-context-copy">
+                  <small id="contextMode">EVERYDAY</small>
+                  <strong data-context-label>London · 12°C</strong>
+                  <em id="contextWeather">Light rain</em>
+                </span>
+                <b>Change</b>
+              </button>
+            </div>
+
+            <div class="fitting-stage" id="fittingStage">
+              <div class="avatar-column">
+                <div class="avatar-pane" id="avatarPane">
+                  <img id="tryonImage" src="./assets/avatar-0.png" alt="Your 3D avatar wearing the balloon trousers, front view" />
+                  <div class="look-variant-layers" id="lookVariantLayers" aria-hidden="true"></div>
+                  <div class="garment-points" id="garmentPoints" aria-label="Items on your avatar"></div>
+                </div>
+                <div class="avatar-turn-strip" id="avatarTurnStrip" aria-hidden="true"><span>←</span> Drag your avatar to turn <span>→</span></div>
+              </div>
+
+              <aside class="tryon-product-rail" id="tryonProductRail" aria-label="Items on your avatar">
+                <div id="activeItemCard"></div>
+              </aside>
+
+              <span class="item-connector" id="itemConnector" aria-hidden="true"></span>
+            </div>
+
+            <div class="tryon-actions is-single-item" id="tryonActionBar">
+              <button class="secondary-action" data-add-item>Add to bag</button>
+              <button class="primary-action" id="previewLookBtn">Style this item <span>→</span></button>
+            </div>
+          </section>
+
+          <section class="screen my-looks-screen" data-screen="mylooks" aria-label="My saved looks">
+            <header class="app-header solid-header">
+              <button class="icon-button" id="myLooksBackBtn" aria-label="Back to your generated look">‹</button>
+              <div class="header-title"><strong>My Looks</strong><span>Your personal lookbook</span></div>
+              <button class="my-looks-avatar" aria-label="Profile">V</button>
+            </header>
+
+            <div class="my-looks-scroll">
+              <div class="my-looks-intro">
+                <p class="eyebrow">YOUR STYLE, COLLECTED</p>
+                <h2>Looks made for you.</h2>
+                <p>Keep the whole idea—not just one item. Come back to wear it, restyle it or shop what is missing.</p>
+              </div>
+              <div class="my-looks-filters" aria-label="Filter saved looks">
+                <button class="is-active">All</button><button>Everyday</button><button>Travel</button><button>Work</button>
+              </div>
+              <div class="my-looks-grid" id="myLooksGrid" aria-label="Saved look collection"></div>
+            </div>
+
+            <nav class="bottom-nav" aria-label="Primary navigation">
+              <button><i>⌂</i><span>Home</span></button>
+              <button><i>◇</i><span>Market</span></button>
+              <button class="create-button" aria-label="Create">＋</button>
+              <button><i>◌</i><span>Inbox</span></button>
+              <button class="is-active"><i>♙</i><span>Me</span></button>
+            </nav>
+          </section>
+
+          <section class="screen look-detail-screen" data-screen="lookdetail" aria-label="Saved look details">
+            <header class="app-header solid-header">
+              <button class="icon-button" id="lookDetailBackBtn" aria-label="Back to My Looks">‹</button>
+              <div class="header-title"><strong>Saved look</strong><span id="lookDetailHeader">London everyday</span></div>
+              <button class="icon-button dots" aria-label="More">•••</button>
+            </header>
+
+            <div class="look-detail-scroll">
+              <div class="look-detail-hero">
+                <img id="lookDetailImage" src="./assets/look-ballet.png" alt="Saved London everyday look on your avatar" />
+                <span class="saved-look-badge">Saved ✓</span>
+                <div class="look-detail-overlay">
+                  <small id="lookDetailMode">EVERYDAY</small>
+                  <h2 id="lookDetailTitle">London everyday</h2>
+                  <p id="lookDetailContext">London · 12°C · Light rain</p>
+                </div>
+              </div>
+
+              <div class="look-detail-copy">
+                <div>
+                  <p class="eyebrow">ITEMS IN THIS LOOK</p>
+                  <h3>Your look, piece by piece.</h3>
+                </div>
+                <button id="restyleSavedLookBtn">Restyle</button>
+              </div>
+              <p class="look-detail-helper">Review each recommendation, then select only the pieces you want to buy.</p>
+              <div class="look-items-list" id="lookItemsList"></div>
+            </div>
+
+            <div class="look-purchase-bar" id="lookPurchaseBar">
+              <div><small id="lookSelectionCount">No items selected</small><strong id="lookSelectionTotal">Select what you want</strong></div>
+              <button class="primary-action" id="addSelectedLookItems" disabled>Continue to checkout</button>
+            </div>
+          </section>
+
+          <section class="screen fitting-screen look-screen" data-screen="look" aria-label="Personalized full look">
+            <header class="app-header solid-header">
+              <button class="icon-button back-tryon" aria-label="Back">‹</button>
+              <div class="header-title"><strong>Your everyday look</strong><span>Built around 1 locked item</span></div>
+              <button class="icon-button dots" aria-label="More">•••</button>
+            </header>
+
+            <div class="look-stage">
+              <img id="lookImage" src="./assets/look-ballet.png" alt="Personalized polished everyday outfit" />
+              <button class="context-pill" id="contextBtn" data-context-trigger><span>☼</span> <span data-context-label>For today · London · 12°C</span> <b>Change</b></button>
+              <div class="look-reasons">
+                <span>Balances volume</span><span>Uses 1 owned item</span>
+              </div>
+            </div>
+
+            <div class="look-panel">
+              <div class="section-label"><span>Tap an item to refine</span><b>4 pieces</b></div>
+              <div class="item-rail">
+                <button class="item-card locked-card">
+                  <i class="fabric-trouser"></i><span>Trousers<small>Locked · £129</small></span><b>⌑</b>
+                </button>
+                <button class="item-card" id="shoeCard">
+                  <i class="fabric-ballet" id="shoeCardThumb"></i><span id="shoeCardName">Ballet flats<small id="shoeCardPrice">In this look · not added</small></span><b>›</b>
+                </button>
+                <button class="item-card owned-card">
+                  <i class="fabric-knit"></i><span>Ivory knit<small>Already yours</small></span><b>✓</b>
+                </button>
+                <button class="item-card">
+                  <i class="fabric-bag"></i><span>Shoulder bag<small>Recommended · £110</small></span><b>＋</b>
+                </button>
+              </div>
+              <button class="primary-action full-width" id="lookBagBtn">Add trousers · £129</button>
+            </div>
+          </section>
+
+          <section class="screen fitting-screen shoe-screen" data-screen="shoes" aria-label="Compare shoes">
+            <header class="app-header solid-header">
+              <button class="icon-button" id="shoeBackBtn" aria-label="Back to your look">‹</button>
+              <div class="header-title"><strong>Shoes for this look</strong><span>Previewing is optional</span></div>
+              <button class="text-button" id="shoeDoneBtn">Done</button>
+            </header>
+
+            <div class="shoe-stage">
+              <img id="shoeImage" src="./assets/look-ballet.png" alt="Lower body shoe comparison" />
+              <div class="focus-label"><span></span> Keeping your trousers locked</div>
+              <button class="compare-button" id="compareBtn">⇄ Compare original</button>
+            </div>
+
+            <div class="shoe-panel">
+              <p class="section-kicker">REAL ITEMS · READY TO SHIP</p>
+              <p class="shoe-helper" id="shoeHelper">No new pair selected · your current look stays unchanged.</p>
+              <div class="shoe-options" role="listbox" aria-label="Shoe options">
+                <button class="shoe-option" data-shoe="ballet" role="option" aria-selected="false">
+                  <i class="shoe-shape ballet-shape"></i>
+                  <span><b>Oxblood ballet</b><small>Refines the curve</small><strong>£89</strong></span>
+                </button>
+                <button class="shoe-option" data-shoe="loafer" role="option" aria-selected="false">
+                  <i class="shoe-shape loafer-shape"></i>
+                  <span><b>Black loafer</b><small>Sharpens the look</small><strong>£118</strong></span>
+                </button>
+                <button class="shoe-option" data-shoe="sneaker" role="option" aria-selected="false">
+                  <i class="shoe-shape sneaker-shape"></i>
+                  <span><b>Retro sneaker</b><small>Easy all-day wear</small><strong>£95</strong></span>
+                </button>
+              </div>
+              <button class="secondary-action full-width continue-action" id="addShoeBtn">Continue without adding</button>
+            </div>
+          </section>
+
+          <div class="loading-layer" id="loadingLayer" aria-live="polite">
+            <div class="scan-line"></div>
+            <div class="loading-copy">
+              <span></span><b>Fitting it to you</b><small>Keeping your proportions and the item’s real silhouette</small>
+              <div class="loading-analysis" id="loadingAnalysis" aria-hidden="true">
+                <em>✓ Your height, proportions &amp; fit profile</em>
+                <em>✓ London weather &amp; today’s plans</em>
+                <em>✓ Your saved style preferences</em>
+                <em>✓ Colour and silhouette balance</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="context-scrim" id="contextScrim"></div>
+          <article class="context-sheet" id="contextSheet" aria-label="Change plans">
+            <div class="sheet-handle"></div>
+            <p class="eyebrow">OPTIONAL CONTEXT</p>
+            <h2>Anything special about your plans?</h2>
+            <p>Everyday is the default. Add detail only when it matters.</p>
+            <label class="context-input">
+              <input id="contextInput" type="text" placeholder="Tell us where you’re going…" />
+              <button id="voiceBtn" aria-label="Voice input">◉</button>
+            </label>
+            <div class="specific-plans">
+              <button data-plan="Paris city walk">巴黎城市散步</button>
+            </div>
+            <button class="primary-action full-width" id="applyContextBtn">Apply context</button>
+          </article>
+
+          <div class="checkout-scrim" id="checkoutScrim"></div>
+          <article class="checkout-sheet" id="checkoutSheet" aria-label="Checkout selected pieces">
+            <div class="sheet-handle"></div>
+            <p class="eyebrow">READY TO CHECK OUT</p>
+            <h2 id="checkoutTitle">Only the pieces you chose.</h2>
+            <p class="checkout-look-name" id="checkoutLookName">From your saved look</p>
+            <div class="checkout-items" id="checkoutItems"></div>
+            <div class="checkout-delivery"><span>▣</span><div><b>Free tracked delivery</b><small>Estimated Friday · duties included</small></div></div>
+            <div class="checkout-offer" id="checkoutOffer" hidden><span>Complete-look saving · 10% off</span><strong id="checkoutSaving">−£0</strong></div>
+            <div class="checkout-total"><span>Total</span><strong id="checkoutTotal">£0</strong></div>
+            <button class="primary-action full-width" id="paySelectedLookItems">Pay securely</button>
+          </article>
+
+          <div class="toast" id="toast" role="status"></div>
+        </div>
+      </section>
+
+      <aside id="decisionPanel" class="decision-panel" aria-live="polite" aria-label="当前页面的设计思路">
+        <div class="decision-progress"><span id="caseChapterNumber">01 / 07</span><i><b id="caseProgressBar"></b></i></div>
+        <p class="decision-kicker" id="caseKicker">穿搭浏览</p>
+        <h2 id="caseTitle">穿搭浏览页</h2>
+        <p class="decision-summary" id="caseSummary">当季趋势使用大 Banner 作为专题入口，下方双列笔记流承接日常个性化推荐</p>
+
+        <div class="decision-points" aria-label="本页核心功能">
+          <span>核心功能</span>
+          <ul>
+            <li id="casePoint1">Banner 展示当季穿搭趋势</li>
+            <li id="casePoint2">双列笔记流提供个性化穿搭推荐</li>
+            <li id="casePoint3">Explore 进入对应主题的穿搭详情</li>
+          </ul>
+        </div>
+
+          <div class="decision-block">
+          <span>设计思路</span>
+          <p id="caseDecision">内容浏览和商品购买使用同一条路径，用户可以从喜欢的造型继续了解其中的商品</p>
+        </div>
+        <div class="decision-block decision-try">
+          <span>可以这样体验</span>
+          <p id="caseTry">点击 Explore 进入穿搭详情（页面内其他内容仅作展示，无法点击）</p>
+        </div>
+
+        <div class="decision-controls">
+          <button type="button" id="casePrev" aria-label="上一个设计步骤">←</button>
+          <button type="button" id="caseNext">下一步 <span>→</span></button>
+        </div>
+      </aside>
+
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
